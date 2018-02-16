@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+
+   <extension
+         point="org.eclipse.ui.newWizards">
+      <category
+            name="STAF"
+            id="com.ibm.staf.eclipse.wizards">
+      </category>
+      <wizard
+            name="Machine Group"
+            icon="icons/groups_obj.gif"
+            category="com.ibm.staf.eclipse.wizards"
+            class="com.ibm.staf.eclipse.wizards.NewMachineGroupWizard"
+            id="com.ibm.staf.eclipse.wizards.NewMachineGroupWizard">
+      </wizard>
+      <wizard
+            category="com.ibm.staf.eclipse.wizards"
+            class="com.ibm.staf.eclipse.wizards.NewMachineWizard"
+            icon="icons/machine_obj.gif"
+            id="com.ibm.staf.eclipse.wizards.NewMachineWizard"
+            name="Machine"/>
+      <wizard
+            category="com.ibm.staf.eclipse.wizards"
+            class="com.ibm.staf.eclipse.wizards.NewProjectWizard"
+            icon="icons/STAF.GIF"
+            id="com.ibm.staf.eclipse.wizards.NewProjectWizard"
+            name="STAF Project"
+            project="true"/>
+   </extension>
+
+</plugin>

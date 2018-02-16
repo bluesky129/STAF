@@ -1,0 +1,173 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- Schema file written by PDE -->
+<schema targetNamespace="com.ibm.staf.eclipse.editor">
+<annotation>
+      <appInfo>
+         <meta.schema plugin="com.ibm.staf.eclipse.editor" id="com.ibm.staf.eclipse.editor.editorTab" name="Editor Tab"/>
+      </appInfo>
+      <documentation>
+         This Extension Point allows additional pages (tabs) to be added to the STAF Multi-Page Editor. Extensions must implement the ISTAFEditorExtension interface. An abstract implementation has been provided via the STAFEditorExtension class.
+      </documentation>
+   </annotation>
+
+   <element name="tab">
+      <complexType>
+         <attribute name="class" type="string" use="required">
+            <annotation>
+               <documentation>
+                  A fully qualififed java class which implements the ISTAFEditorExtension. Extensions may extend the STAFEditorExtension class to gain built-in functionality.
+               </documentation>
+               <appInfo>
+                  <meta.attribute kind="java" basedOn="com.ibm.staf.eclipse.editor.ISTAFEditorExtension"/>
+               </appInfo>
+            </annotation>
+         </attribute>
+         <attribute name="serviceNames" type="string" use="required">
+            <annotation>
+               <documentation>
+                  A regular expression describing STAF service names which should be mapped to this extension. One tab will appear for each service which matches the expression. Case is ignored. This attribute has no effect if alwaysShow is true.
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="title" type="string">
+            <annotation>
+               <documentation>
+                  An optional title for the page created for this extension. If not specified, the matching service name will be used.
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="alwaysShow" type="boolean" use="default" value="false">
+            <annotation>
+               <documentation>
+                  If true, the serviceNames attribute is ignored and this page is always displayed exactly once.
+               </documentation>
+            </annotation>
+         </attribute>
+      </complexType>
+   </element>
+
+   <element name="extension">
+      <complexType>
+         <sequence>
+            <element ref="tab"/>
+         </sequence>
+         <attribute name="point" type="string" use="required">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="id" type="string">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="name" type="string">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+               <appInfo>
+                  <meta.attribute translatable="true"/>
+               </appInfo>
+            </annotation>
+         </attribute>
+      </complexType>
+   </element>
+
+   <annotation>
+      <appInfo>
+         <meta.section type="since"/>
+      </appInfo>
+      <documentation>
+         0.5.0
+      </documentation>
+   </annotation>
+
+   <annotation>
+      <appInfo>
+         <meta.section type="examples"/>
+      </appInfo>
+      <documentation>
+         [Enter extension point usage example here.]
+      </documentation>
+   </annotation>
+
+   <annotation>
+      <appInfo>
+         <meta.section type="apiInfo"/>
+      </appInfo>
+      <documentation>
+         The following four methods are required by ISTAFEditorExtension:
+&lt;p&gt;
+    /**&lt;br&gt;
+     * This method is called by STAFEditor to instruct the extension to&lt;br&gt;
+     * create its page construction for the editor tab. &lt;br&gt;
+     * @param parent The Composite parent of the extension&apos;s page. &lt;br&gt;
+     * @return Composite representing the desired gui components&lt;br&gt;
+     * of the extension&apos;s page.&lt;br&gt;
+     */&lt;br&gt;
+    public Composite createPage(Composite parent);&lt;br&gt;
+    &lt;br&gt;
+    &lt;br&gt;
+    /**&lt;br&gt;
+     * Allows the STAFEditorExtension to dispose of any extra&lt;br&gt;
+     * resources that were created. There is no need to dispose of&lt;br&gt;
+     * the Composite returned from createPage(Composite parent)&lt;br&gt;
+     * or its children as Eclipse will handle it in its disposal&lt;br&gt;
+     * hierachy. &lt;br&gt;
+     * @see #createPage(Composite)&lt;br&gt;
+     */&lt;br&gt;
+    public void dispose();&lt;br&gt;
+    &lt;br&gt;
+    &lt;br&gt;
+    /**&lt;br&gt;
+     * This method is called by STAFEditor after construction to set required&lt;br&gt;
+     * fields. This method must store the STAFEditor for later use. It should not&lt;br&gt;
+     * be called by other classes or methods.&lt;br&gt;
+     * @param editor the parent STAFEditor of this extension &lt;br&gt;
+     */&lt;br&gt;
+    public void setEditor(STAFEditor editor);&lt;br&gt;
+    &lt;br&gt;
+    &lt;br&gt;
+    /**&lt;br&gt;
+     * This method is called by STAFEditor after construction to set required&lt;br&gt;
+     * fields. This method must store the STAF service name for later use. It should&lt;br&gt;
+     * not be called by other classes or methods.&lt;br&gt;
+     * @param name the STAF service name &lt;br&gt;
+     */&lt;br&gt;
+    public void setServiceName(String name);&lt;br&gt;
+      </documentation>
+   </annotation>
+
+   <annotation>
+      <appInfo>
+         <meta.section type="implementation"/>
+      </appInfo>
+      <documentation>
+         &lt;p&gt;The abstract class STAFEditorExtension implements the ISTAFEditorExtension interace and provides some base functionality that is likely needed by most extensions.
+
+&lt;p&gt;The default abstract implementation only requires extenders to implement the createPage(Composite) method.
+
+&lt;p&gt;The abstract implementation also provides methods to submit STAF commands (submitCommand(ISTAFRequest)) and add requests to the STAFEditors main page (addRequest(ISTAFRequest)) as well as some utility methods to get at some STAF Editor properties and classes.
+
+&lt;p&gt;See ISTAFEditorExtension and STAFEditorExtension for more information.
+      </documentation>
+   </annotation>
+
+   <annotation>
+      <appInfo>
+         <meta.section type="copyright"/>
+      </appInfo>
+      <documentation>
+         Software Testing Automation Framework (STAF)                              
+ (C) Copyright IBM Corp. 2007                                              
+                                                                          
+ This software is licensed under the Eclipse Public License (EPL) V1.0.
+      </documentation>
+   </annotation>
+
+</schema>

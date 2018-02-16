@@ -1,0 +1,6 @@
+@dot
+com.ibm.staf.eclipse.extension.service_0.9.0.jar
+build.xml
+javaCompiler...args
+com.ibm.staf.eclipse.extension.service_0.5.0.jar
+*.jar

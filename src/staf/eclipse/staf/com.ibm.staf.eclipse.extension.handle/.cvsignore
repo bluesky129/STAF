@@ -1,0 +1,6 @@
+@dot
+com.ibm.staf.eclipse.extension.handle_0.9.0.jar
+javaCompiler...args
+build.xml
+com.ibm.staf.eclipse.extension.handle_0.5.0.jar
+*.jar

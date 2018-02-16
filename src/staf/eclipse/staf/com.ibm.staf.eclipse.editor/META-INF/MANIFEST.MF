@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: STAF Editor Extension
+Bundle-SymbolicName: com.ibm.staf.eclipse.editor;singleton:=true
+Bundle-Version: 0.5.1
+Bundle-Activator: com.ibm.staf.eclipse.editor.Activator
+Bundle-Vendor: IBM-AIS
+Bundle-Localization: plugin
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.ui.ide,
+ org.eclipse.core.resources,
+ JSTAF.jar,
+ com.ibm.staf.eclipse.model
+Eclipse-LazyStart: true
+Export-Package: com.ibm.staf.eclipse.editor

@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: JSTAF Packages
+Bundle-SymbolicName: JSTAF.jar
+Bundle-Version: 3.2.2
+Bundle-Vendor: IBM-STAF (IBM-AIS packaged)
+Bundle-Localization: plugin
+Bundle-ClassPath: lib/JSTAF.jar,
+ .
+Export-Package: com.ibm.staf,
+ com.ibm.staf.service,
+ com.ibm.staf.wrapper

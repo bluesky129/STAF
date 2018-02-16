@@ -1,0 +1,14 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Service Service STAF Editor Extension
+Bundle-SymbolicName: com.ibm.staf.eclipse.extension.service;singleton:=true
+Bundle-Version: 0.5.1
+Bundle-Activator: com.ibm.staf.eclipse.extension.service.Activator
+Bundle-Vendor: IBM-AIS
+Bundle-Localization: plugin
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ com.ibm.staf.eclipse.editor,
+ com.ibm.staf.eclipse.model,
+ JSTAF.jar
+Eclipse-LazyStart: true

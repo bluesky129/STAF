@@ -1,0 +1,15 @@
+build.xml
+com.ibm.staf.eclipse.extension.var.feature_0.9.0.jar
+com.ibm.staf.eclipse.feature_0.9.0.bin.dist.zip
+com.ibm.staf.eclipse.extension.trust.feature_0.9.0.jar
+com.ibm.staf.eclipse.extension.handle.feature_0.9.0.jar
+com.ibm.staf.eclipse.feature_0.9.0.jar
+com.ibm.staf.eclipse.extension.service.feature_0.9.0.jar
+com.ibm.staf.eclipse.feature_0.5.0.bin.dist.zip
+com.ibm.staf.eclipse.extension.var.feature_0.5.0.jar
+com.ibm.staf.eclipse.extension.handle.feature_0.5.0.jar
+com.ibm.staf.eclipse.feature_0.5.0.jar
+com.ibm.staf.eclipse.extension.service.feature_0.5.0.jar
+com.ibm.staf.eclipse.extension.trust.feature_0.5.0.jar
+*.jar
+*.zip
